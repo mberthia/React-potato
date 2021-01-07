@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16.14.0/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16.14.0/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+
+    <script type="text/babel">
+      function Potato(props) {
+        return (
+          <div className="potato">
+            <h1>
+              The best potatos are {props.potatoName1} and the
+              {props.potatoName2}
+            </h1>
+
+            <h1>
+              You can learn more about potatoes
+              <a href={props.potatoSource}> here</a>
+            </h1>
+          </div>
+        );
+      }
+      const element = (
+        <div>
+          <Potato
+            potatoName1="Red Potato"
+            potatoName2="Yellow Potato"
+            potatoSource="https://en.wikipedia.org/wiki/Potato#Varieties"
+          />
+          <Potato
+            potatoName1="Sweet Potato"
+            potatoName2="Purple Potato"
+            potatoSource="https://en.wikipedia.org/wiki/Potato#Varieties"
+          />
+        </div>
+      );
+      ReactDOM.render(element, document.getElementById("root"));
+    </script>
+  </body>
+</html>
